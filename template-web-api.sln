@@ -1,0 +1,47 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.12.35527.113
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{45662C8F-8DD4-4EE8-A872-02D206CCBAAE}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "templateS", "templateS", "{CBB51BF4-FFD7-4FE9-A9D4-F8A8FEB58FA2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "template-web-api", "template-web-api\src\TemplateS\template-web-api.csproj", "{F513B2E3-BE8A-4311-AF37-B1C9EBC3289A}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "templateM", "templateM", "{537FC1E6-1198-40DE-BAA9-EB0212DB89CC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "template-web-api-M", "template-web-api\src\TemplateM\template-web-api-M\Controller\template-web-api-M.csproj", "{EF73A459-99D5-49DA-A4B4-12D1E19D7D93}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "template-web-api-M.Bussiness", "template-web-api\src\TemplateM\template-web-api-M\template-web-api-M.Bussiness\template-web-api-M.Bussiness\template-web-api-M.Bussiness.csproj", "{5B15E668-D7FC-4FC1-914F-2F0BE30BDB4E}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{F513B2E3-BE8A-4311-AF37-B1C9EBC3289A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F513B2E3-BE8A-4311-AF37-B1C9EBC3289A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F513B2E3-BE8A-4311-AF37-B1C9EBC3289A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F513B2E3-BE8A-4311-AF37-B1C9EBC3289A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EF73A459-99D5-49DA-A4B4-12D1E19D7D93}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EF73A459-99D5-49DA-A4B4-12D1E19D7D93}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EF73A459-99D5-49DA-A4B4-12D1E19D7D93}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EF73A459-99D5-49DA-A4B4-12D1E19D7D93}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5B15E668-D7FC-4FC1-914F-2F0BE30BDB4E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5B15E668-D7FC-4FC1-914F-2F0BE30BDB4E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5B15E668-D7FC-4FC1-914F-2F0BE30BDB4E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5B15E668-D7FC-4FC1-914F-2F0BE30BDB4E}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{CBB51BF4-FFD7-4FE9-A9D4-F8A8FEB58FA2} = {45662C8F-8DD4-4EE8-A872-02D206CCBAAE}
+		{F513B2E3-BE8A-4311-AF37-B1C9EBC3289A} = {CBB51BF4-FFD7-4FE9-A9D4-F8A8FEB58FA2}
+		{537FC1E6-1198-40DE-BAA9-EB0212DB89CC} = {45662C8F-8DD4-4EE8-A872-02D206CCBAAE}
+		{EF73A459-99D5-49DA-A4B4-12D1E19D7D93} = {537FC1E6-1198-40DE-BAA9-EB0212DB89CC}
+		{5B15E668-D7FC-4FC1-914F-2F0BE30BDB4E} = {537FC1E6-1198-40DE-BAA9-EB0212DB89CC}
+	EndGlobalSection
+EndGlobal
