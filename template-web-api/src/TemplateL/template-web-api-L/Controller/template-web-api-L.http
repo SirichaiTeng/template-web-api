@@ -1,6 +1,0 @@
-@template_web_api_L_HostAddress = http://localhost:5102
-
-GET {{template_web_api_L_HostAddress}}/weatherforecast/
-Accept: application/json
-
-###
