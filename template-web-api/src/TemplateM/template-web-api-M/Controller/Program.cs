@@ -1,4 +1,12 @@
 
+using Microsoft.Extensions.DependencyInjection;
+using template_web_api_M.Application.Interfaces;
+using template_web_api_M.Application.Services;
+using template_web_api_M.Common.ConnectionFactory;
+using template_web_api_M.Domain.Interfaces.IRepositories;
+using template_web_api_M.Infrastructrue.Data;
+using template_web_api_M.Infrastructrue.Repositories;
+
 namespace template_web_api_M;
 
 public class Program
@@ -16,7 +24,38 @@ public class Program
 
         var app = builder.Build();
 
-        // Configure the HTTP request pipeline.
+        builder.Services.AddDbContext<ApplicationDbContext>(options =>
+            options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
+
+        // AutoMapper
+        builder.Services.AddAutoMapper(typeof(Program));
+
+        // Dependency Injection
+        builder.Services.AddScoped<IUserRepository, UserRepository>();
+        builder.Services.AddScoped<IUserService, UserService>();
+        builder.Services.AddScoped<IDapperWarpper, DapperWarpper>();
+
+        // JWT Authentication
+        builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
+            .AddJwtBearer(options =>
+            {
+                options.TokenValidationParameters = new TokenValidationParameters
+                {
+                    ValidateIssuer = true,
+                    ValidateAudience = true,
+                    ValidateLifetime = true,
+                    ValidateIssuerSigningKey = true,
+                    ValidIssuer = builder.Configuration["Jwt:Issuer"],
+                    ValidAudience = builder.Configuration["Jwt:Audience"],
+                    IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(builder.Configuration["Jwt:SecretKey"]))
+                };
+            });
+
+        builder.Services.AddAuthorization();
+
+        var app = builder.Build();
+
+        // Configure the HTTP request pipeline
         if (app.Environment.IsDevelopment())
         {
             app.UseSwagger();
@@ -24,10 +63,8 @@ public class Program
         }
 
         app.UseHttpsRedirection();
-
+        app.UseAuthentication();
         app.UseAuthorization();
-
-
         app.MapControllers();
 
         app.Run();
