@@ -13,7 +13,13 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "templateM", "templateM", "{
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "template-web-api-M", "template-web-api\src\TemplateM\template-web-api-M\Controller\template-web-api-M.csproj", "{EF73A459-99D5-49DA-A4B4-12D1E19D7D93}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "template-web-api-M.Bussiness", "template-web-api\src\TemplateM\template-web-api-M\template-web-api-M.Bussiness\template-web-api-M.Bussiness\template-web-api-M.Bussiness.csproj", "{5B15E668-D7FC-4FC1-914F-2F0BE30BDB4E}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "template-web-api-M.Domain", "template-web-api\src\TemplateM\template-web-api-M\template-web-api-M.Domain\template-web-api-M.Domain.csproj", "{220AABA9-668E-42BA-ABF2-BC8872BDA1E3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "template-web-api-M.Application", "template-web-api\src\TemplateM\template-web-api-M\template-web-api-M.Application\template-web-api-M.Application.csproj", "{0E2CD294-DAEE-4D7A-8F23-2764B6801347}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "template-web-api-M.Infrastructrue", "template-web-api\src\TemplateM\template-web-api-M\template-web-api-M.Infrastructrue\template-web-api-M.Infrastructrue.csproj", "{5FFB951C-C4AD-4BE7-967A-12901C35AF3C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "template-web-api-M.Common", "template-web-api\src\TemplateM\template-web-api-M\template-web-api-M.Common\template-web-api-M.Common.csproj", "{A1EF7DC4-4F36-4805-B1D7-D299D6A16741}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -29,10 +35,22 @@ Global
 		{EF73A459-99D5-49DA-A4B4-12D1E19D7D93}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{EF73A459-99D5-49DA-A4B4-12D1E19D7D93}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{EF73A459-99D5-49DA-A4B4-12D1E19D7D93}.Release|Any CPU.Build.0 = Release|Any CPU
-		{5B15E668-D7FC-4FC1-914F-2F0BE30BDB4E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{5B15E668-D7FC-4FC1-914F-2F0BE30BDB4E}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{5B15E668-D7FC-4FC1-914F-2F0BE30BDB4E}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{5B15E668-D7FC-4FC1-914F-2F0BE30BDB4E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{220AABA9-668E-42BA-ABF2-BC8872BDA1E3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{220AABA9-668E-42BA-ABF2-BC8872BDA1E3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{220AABA9-668E-42BA-ABF2-BC8872BDA1E3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{220AABA9-668E-42BA-ABF2-BC8872BDA1E3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0E2CD294-DAEE-4D7A-8F23-2764B6801347}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0E2CD294-DAEE-4D7A-8F23-2764B6801347}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0E2CD294-DAEE-4D7A-8F23-2764B6801347}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0E2CD294-DAEE-4D7A-8F23-2764B6801347}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5FFB951C-C4AD-4BE7-967A-12901C35AF3C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5FFB951C-C4AD-4BE7-967A-12901C35AF3C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5FFB951C-C4AD-4BE7-967A-12901C35AF3C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5FFB951C-C4AD-4BE7-967A-12901C35AF3C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A1EF7DC4-4F36-4805-B1D7-D299D6A16741}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A1EF7DC4-4F36-4805-B1D7-D299D6A16741}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A1EF7DC4-4F36-4805-B1D7-D299D6A16741}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A1EF7DC4-4F36-4805-B1D7-D299D6A16741}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -42,6 +60,9 @@ Global
 		{F513B2E3-BE8A-4311-AF37-B1C9EBC3289A} = {CBB51BF4-FFD7-4FE9-A9D4-F8A8FEB58FA2}
 		{537FC1E6-1198-40DE-BAA9-EB0212DB89CC} = {45662C8F-8DD4-4EE8-A872-02D206CCBAAE}
 		{EF73A459-99D5-49DA-A4B4-12D1E19D7D93} = {537FC1E6-1198-40DE-BAA9-EB0212DB89CC}
-		{5B15E668-D7FC-4FC1-914F-2F0BE30BDB4E} = {537FC1E6-1198-40DE-BAA9-EB0212DB89CC}
+		{220AABA9-668E-42BA-ABF2-BC8872BDA1E3} = {537FC1E6-1198-40DE-BAA9-EB0212DB89CC}
+		{0E2CD294-DAEE-4D7A-8F23-2764B6801347} = {537FC1E6-1198-40DE-BAA9-EB0212DB89CC}
+		{5FFB951C-C4AD-4BE7-967A-12901C35AF3C} = {537FC1E6-1198-40DE-BAA9-EB0212DB89CC}
+		{A1EF7DC4-4F36-4805-B1D7-D299D6A16741} = {537FC1E6-1198-40DE-BAA9-EB0212DB89CC}
 	EndGlobalSection
 EndGlobal
