@@ -4,16 +4,19 @@
     <TargetFramework>net8.0</TargetFramework>
     <Nullable>enable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
-    <RootNamespace>template_web_api_M</RootNamespace>
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="Dapper" Version="2.1.66" />
+    <PackageReference Include="Microsoft.Data.SqlClient" Version="6.1.4" />
+    <PackageReference Include="Npgsql" Version="10.0.1" />
     <PackageReference Include="Swashbuckle.AspNetCore" Version="6.6.2" />
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\template-web-api-M.Application\template-web-api-M.Application.csproj" />
-    <ProjectReference Include="..\template-web-api-M.Infrastructrue\template-web-api-M.Infrastructrue.csproj" />
+    <Folder Include="Interfaces\IServices\" />
+    <Folder Include="Models\Request\" />
+    <Folder Include="Services\" />
   </ItemGroup>
 
 </Project>
