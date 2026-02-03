@@ -1,6 +1,7 @@
 
 using OriginalExample.Data;
 using OriginalExample.Interfaces.IData;
+using Serilog;
 
 namespace OriginalExample;
 
@@ -11,7 +12,9 @@ public class Program
         var builder = WebApplication.CreateBuilder(args);
         RegisterServices(builder.Configuration,builder.Services);
         // Add services to the container.
-
+        builder.Host.UseSerilog((ctx, lc) =>
+                    lc.ReadFrom.Configuration(ctx.Configuration)
+                );
         builder.Services.AddControllers();
         // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
         builder.Services.AddEndpointsApiExplorer();
@@ -38,6 +41,7 @@ public class Program
 
     private static void RegisterServices(IConfiguration configuration,IServiceCollection services)
     {
+        services.AddSingleton<Serilog.ILogger>(Log.Logger);
         services.AddScoped<IDapperWarpper, DapperWarpper>();
         services.AddScoped<IDbConnectionFactory, DbConnectionFactory>();
     }
