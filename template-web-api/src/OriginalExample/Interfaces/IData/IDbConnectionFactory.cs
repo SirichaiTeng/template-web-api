@@ -1,4 +1,4 @@
-﻿using OriginalExample.Constants;
+﻿using OriginalExample.Common.Constants;
 using System.Data;
 
 namespace OriginalExample.Interfaces.IData;

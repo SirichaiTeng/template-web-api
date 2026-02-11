@@ -1,6 +1,6 @@
 ﻿using System.Text.Json;
 
-namespace OriginalExample.Utils;
+namespace OriginalExample.Common.Utils;
 
 public static class FileUtil
 {
@@ -8,7 +8,7 @@ public static class FileUtil
     {
         using (FileStream fs = new FileStream(filePath, FileMode.Open, FileAccess.Read))
         {
-            return await JsonSerializer.DeserializeAsync<T>(fs, new JsonSerializerOptions() { PropertyNameCaseInsensitive = true, IncludeFields = true});
+            return await JsonSerializer.DeserializeAsync<T>(fs, new JsonSerializerOptions() { PropertyNameCaseInsensitive = true, IncludeFields = true });
         }
     }
 

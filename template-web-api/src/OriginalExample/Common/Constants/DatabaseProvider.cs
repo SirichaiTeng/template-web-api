@@ -1,4 +1,4 @@
-﻿namespace OriginalExample.Constants;
+﻿namespace OriginalExample.Common.Constants;
 
 public enum DatabaseProvider
 {
