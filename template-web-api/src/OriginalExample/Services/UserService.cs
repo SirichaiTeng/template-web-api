@@ -1,5 +1,4 @@
-﻿
-using OriginalExample.Interfaces.IRepositories;
+﻿using OriginalExample.Interfaces.IRepositories;
 using OriginalExample.Interfaces.IServices;
 using OriginalExample.Models.Entity;
 

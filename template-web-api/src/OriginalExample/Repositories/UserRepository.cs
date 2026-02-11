@@ -1,4 +1,4 @@
-﻿using OriginalExample.Constants;
+﻿using OriginalExample.Common.Constants;
 using OriginalExample.Interfaces.IData;
 using OriginalExample.Interfaces.IRepositories;
 using OriginalExample.Models.Entity;

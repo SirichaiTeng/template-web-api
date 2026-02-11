@@ -1,6 +1,6 @@
 ﻿using Microsoft.Data.SqlClient;
 using Npgsql;
-using OriginalExample.Constants;
+using OriginalExample.Common.Constants;
 using OriginalExample.Interfaces.IData;
 using System.Data;
 

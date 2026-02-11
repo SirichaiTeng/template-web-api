@@ -1,6 +1,6 @@
 ﻿using ClosedXML.Excel;
 
-namespace OriginalExample.Utils;
+namespace OriginalExample.Common.Utils;
 
 public static class ExcelHelper
 {
@@ -12,26 +12,26 @@ public static class ExcelHelper
         var props = typeof(T).GetProperties(System.Reflection.BindingFlags.Public | System.Reflection.BindingFlags.Instance);
 
         // เพิ่ม Header
-        for(int i = 0; i < headerMap.Length; i++)
+        for (int i = 0; i < headerMap.Length; i++)
         {
-            ws.Cell(1, i+1).Value = headerMap[i];
+            ws.Cell(1, i + 1).Value = headerMap[i];
             ws.Cell(1, i + 1).Style.Font.Bold = true;
         }
 
         // เพิ่มข้อมูล
         int row = 2;
-        foreach(var item in data)
+        foreach (var item in data)
         {
-            for(int col = 0; col < headerMap.Length; col++)
+            for (int col = 0; col < headerMap.Length; col++)
             {
                 var prop = props.FirstOrDefault(x =>
                 string.Equals(x.Name, headerMap[col], StringComparison.OrdinalIgnoreCase));
-                if(prop == null)
+                if (prop == null)
                     continue;
 
                 object value = prop.GetValue(item);
 
-                ws.Cell(row, col + 1).SetValue(value?.ToString() ?? string.Empty); 
+                ws.Cell(row, col + 1).SetValue(value?.ToString() ?? string.Empty);
             }
             row++;
         }
