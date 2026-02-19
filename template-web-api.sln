@@ -7,7 +7,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{45662C8F-8DD
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OriginalExample", "template-web-api\src\OriginalExample\OriginalExample.csproj", "{BB17A1AA-9791-4080-BB92-9AD913BA20F7}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "TemplateClean", "TemplateClean", "{FFB63ACE-021E-41C2-BA0F-F5C1C8D2AE7F}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "CleanArchitecture", "CleanArchitecture", "{FFB63ACE-021E-41C2-BA0F-F5C1C8D2AE7F}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "template-web-api-M", "template-web-api\src\TemplateM\template-web-api-M\Controller\template-web-api-M.csproj", "{3871C8CB-D348-45CA-A7B1-B1537171BCF5}"
 EndProject
@@ -20,6 +20,12 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "template-web-api-M.Domain", "template-web-api\src\TemplateM\template-web-api-M\template-web-api-M.Domain\template-web-api-M.Domain.csproj", "{C60009DC-D333-46BA-9571-384F25437FB1}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "template-web-api-M.Infrastructrue", "template-web-api\src\TemplateM\template-web-api-M\template-web-api-M.Infrastructrue\template-web-api-M.Infrastructrue.csproj", "{93779FDF-3D86-4F99-8832-0E7504F01687}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "RepositoryParttern", "RepositoryParttern", "{0BA459CE-23D6-4DBA-BE67-C2BA54582F0C}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{0EC8B29E-210C-4572-99FC-2880B91C5E77}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OriginalExample.Tests", "template-web-api\tests\OriginalExampleTests\OriginalExample.Tests.csproj", "{E2AB2C2A-8FFD-4872-B091-95B5C2480D26}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -55,12 +61,16 @@ Global
 		{93779FDF-3D86-4F99-8832-0E7504F01687}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{93779FDF-3D86-4F99-8832-0E7504F01687}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{93779FDF-3D86-4F99-8832-0E7504F01687}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E2AB2C2A-8FFD-4872-B091-95B5C2480D26}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E2AB2C2A-8FFD-4872-B091-95B5C2480D26}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E2AB2C2A-8FFD-4872-B091-95B5C2480D26}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E2AB2C2A-8FFD-4872-B091-95B5C2480D26}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
-		{BB17A1AA-9791-4080-BB92-9AD913BA20F7} = {45662C8F-8DD4-4EE8-A872-02D206CCBAAE}
+		{BB17A1AA-9791-4080-BB92-9AD913BA20F7} = {0BA459CE-23D6-4DBA-BE67-C2BA54582F0C}
 		{FFB63ACE-021E-41C2-BA0F-F5C1C8D2AE7F} = {45662C8F-8DD4-4EE8-A872-02D206CCBAAE}
 		{3871C8CB-D348-45CA-A7B1-B1537171BCF5} = {FFB63ACE-021E-41C2-BA0F-F5C1C8D2AE7F}
 		{6A75441A-A07A-4255-8E13-AE26DA625274} = {FFB63ACE-021E-41C2-BA0F-F5C1C8D2AE7F}
@@ -68,5 +78,7 @@ Global
 		{61E16D13-EEB5-45BC-9802-9BA115768C02} = {FFB63ACE-021E-41C2-BA0F-F5C1C8D2AE7F}
 		{C60009DC-D333-46BA-9571-384F25437FB1} = {FFB63ACE-021E-41C2-BA0F-F5C1C8D2AE7F}
 		{93779FDF-3D86-4F99-8832-0E7504F01687} = {FFB63ACE-021E-41C2-BA0F-F5C1C8D2AE7F}
+		{0BA459CE-23D6-4DBA-BE67-C2BA54582F0C} = {45662C8F-8DD4-4EE8-A872-02D206CCBAAE}
+		{E2AB2C2A-8FFD-4872-B091-95B5C2480D26} = {0EC8B29E-210C-4572-99FC-2880B91C5E77}
 	EndGlobalSection
 EndGlobal

@@ -6,6 +6,7 @@ using System.Reflection.Emit;
 using System.Text;
 using System.Threading.Tasks;
 using template_web_api_M.Common.ConnectionFactory;
+using template_web_api_M.Domain.Entites;
 using DbContext = Microsoft.EntityFrameworkCore.DbContext;
 
 namespace template_web_api_M.Infrastructrue.Data;
@@ -32,10 +33,6 @@ public class ApplicationDbContext : DbContext
             entity.Property(e => e.FirstName).HasMaxLength(100);
             entity.Property(e => e.LastName).HasMaxLength(100);
             entity.Property(e => e.PhoneNumber).HasMaxLength(20);
-            entity.Property(e => e.Role).HasMaxLength(50).HasDefaultValue("User");
-            entity.Property(e => e.IsActive).HasDefaultValue(true);
-            entity.Property(e => e.IsEmailVerified).HasDefaultValue(false);
-            entity.Property(e => e.CreatedAt).HasDefaultValueSql("GETUTCDATE()");
         });
     }
 }

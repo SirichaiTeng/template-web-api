@@ -17,7 +17,7 @@ public class UserRepository : IUserRepository
 
     public async Task<IEnumerable<UserInfo>> GetUsersAsync()
     {
-        var connection = _connectionFactory.GetDatebaseInstance(DatabaseProvider.MicrosoftSql);
+        var connection = _connectionFactory.GetDatabaseInstance(DatabaseProvider.MicrosoftSql);
         var sql =  "";
         return await _dapperWarpper.QuaryAsync<UserInfo>(connection,sql, null); 
     }
