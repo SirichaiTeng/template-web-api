@@ -32,7 +32,7 @@ public class DapperWarpperTests
         _connectionMock.SetupDapperAsync(f => f.QueryAsync<string>(sql,null,null,null,null)).ReturnsAsync(expectedResult);
 
         // Act
-        var result = await _dapperWarpper.QuaryAsync<string>(_connectionMock.Object,sql);
+        var result = await _dapperWarpper.QueryAsync<string>(_connectionMock.Object,sql);
 
         // Assert
         Assert.Equal(expectedResult,result);
