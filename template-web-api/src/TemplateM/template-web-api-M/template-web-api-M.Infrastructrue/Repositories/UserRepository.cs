@@ -1,10 +1,12 @@
-﻿using System;
+﻿using Microsoft.EntityFrameworkCore;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using template_web_api_M.Domain.Entites;
 using template_web_api_M.Domain.Interfaces.IRepositories;
+using template_web_api_M.Infrastructrue.Data;
 
 namespace template_web_api_M.Infrastructrue.Repositories;
 public class UserRepository : IUserRepository

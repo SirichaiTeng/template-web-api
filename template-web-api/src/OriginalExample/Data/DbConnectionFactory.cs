@@ -10,29 +10,32 @@ public class DbConnectionFactory : IDbConnectionFactory
 {
     private readonly IConfiguration _configuration;
 
-    public DbConnectionFactory(IConfiguration configuration )
+    public DbConnectionFactory(IConfiguration configuration)
     {
         _configuration = configuration ?? throw new ArgumentNullException( nameof( configuration ) );
     }
-    public IDbConnection GetDatebaseInstance(DatabaseProvider databaseProvider)
+    public IDbConnection GetDatabaseInstance(DatabaseProvider provider)
     {
-        var (connStrName, ctor) = databaseProvider switch
+        var connectionString = GetConnectionString(provider);
+
+        return provider switch
         {
-            DatabaseProvider.MicrosoftSql => ("ConnectionStrings:MsSql",
-            (Func<string, IDbConnection>)(cs => new SqlConnection(cs))),
-
-            DatabaseProvider.PostgreSql => ("ConnectionStrings:PostgreSql",
-            cs => new NpgsqlConnection(cs)),
-
-            _ => throw new NotSupportedException($"Database provider '{databaseProvider}' is not support.")
+            DatabaseProvider.MicrosoftSql => new SqlConnection(connectionString),
+            DatabaseProvider.PostgreSql => new NpgsqlConnection(connectionString),
+            _ => throw new NotSupportedException( $"Database provider '{provider}' is not supported.")
         };
+    }
 
-        var connectionString = _configuration.GetSection(connStrName).Value ?? "";
-        if (string.IsNullOrEmpty(connectionString))
-        {
-            throw new InvalidOperationException($"Connection string '{connStrName}' is missing or empty");
-        }
+    private string GetConnectionString(DatabaseProvider provider)
+    {
+        var key = $"ConnectionStrings:{provider}";
 
-        return ctor(connectionString);
+        var connectionString = _configuration[key];
+
+        if (string.IsNullOrWhiteSpace(connectionString))
+            throw new InvalidOperationException(
+                $"Connection string '{provider}' is missing or empty.");
+
+        return connectionString;
     }
 }

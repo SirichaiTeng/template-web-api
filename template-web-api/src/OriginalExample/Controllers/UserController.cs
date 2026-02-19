@@ -1,7 +1,7 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
-using OriginalExample.Common.Interfaces.IServices;
+using OriginalExample.Interfaces.IServices;
 using OriginalExample.Models.Response;
 using Serilog;
 

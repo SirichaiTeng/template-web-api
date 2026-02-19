@@ -56,4 +56,4 @@ public class User
     [NotMapped]
     public string FullName => $"{FirstName} {LastName}".Trim();
 }
-}
+

@@ -5,5 +5,5 @@ namespace OriginalExample.Interfaces.IData;
 
 public interface IDbConnectionFactory
 {
-    IDbConnection GetDatebaseInstance(DatabaseProvider databaseProvider);
+    IDbConnection GetDatabaseInstance(DatabaseProvider databaseProvider);
 }

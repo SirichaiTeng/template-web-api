@@ -11,7 +11,7 @@ public class DapperWarpper : IDapperWarpper
        return await connection.ExecuteAsync(sql, param);
     }
 
-    public async Task<IEnumerable<T>> QuaryAsync<T>(IDbConnection connection, string sql, object? param = null)
+    public async Task<IEnumerable<T>> QueryAsync<T>(IDbConnection connection, string sql, object? param = null)
     {
        return await connection.QueryAsync<T>(sql, param);
     }
