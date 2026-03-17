@@ -21,11 +21,17 @@ public class TokenServiceTests
     private readonly TokenService _service;
     public TokenServiceTests()
     {
-        var httpClientFactory = new Mock<IHttpClientFactory>();
         _mockConfig = new Mock<IConfiguration>();
         _mockhttpMessage = new Mock<HttpMessageHandler>(MockBehavior.Strict);
+        var httpClient = new HttpClient(_mockhttpMessage.Object)
+        {
+            BaseAddress = new Uri("https://test.com")
+        };
         _mockDbConnectFactory = new Mock<IHttpClientFactory>();
-        var service = new TokenService(httpClientFactory.Object, _mockConfig.Object);
+        _mockDbConnectFactory
+    .Setup(x => x.CreateClient("TokenApi"))
+    .Returns(httpClient);
+        _service = new TokenService(_mockDbConnectFactory.Object, _mockConfig.Object);
     }
 
     [Fact]
@@ -50,15 +56,6 @@ public class TokenServiceTests
                ItExpr.IsAny<CancellationToken>()
            )
            .ReturnsAsync(response);
-
-        var httpClient = new HttpClient(_mockhttpMessage.Object)
-        {
-            BaseAddress = new Uri("https://test.com")
-        };
-
-        _mockDbConnectFactory
-            .Setup(x => x.CreateClient("TokenApi"))
-            .Returns(httpClient);
 
         _mockConfig.Setup(x => x["TokenApi:ClientId"]).Returns("client");
         _mockConfig.Setup(x => x["TokenApi:ClientSecret"]).Returns("secret");
@@ -94,24 +91,14 @@ public class TokenServiceTests
            )
            .ReturnsAsync(response);
 
-        var httpClient = new HttpClient(_mockhttpMessage.Object)
-        {
-            BaseAddress = new Uri("https://test.com")
-        };
-
-        _mockDbConnectFactory
-            .Setup(x => x.CreateClient("TokenApi"))
-            .Returns(httpClient);
 
         _mockConfig.Setup(x => x["TokenApi:ClientId"]).Returns("fake-Client");
         _mockConfig.Setup(x => x["TokenApi:ClientSecret"]).Returns("fake-ClientSecret");
         _mockConfig.Setup(x => x["TokenApi:GrantType"]).Returns("fake-GrantType");
         _mockConfig.Setup(x => x["TokenApi:Scope"]).Returns("fake-Scope");
 
-        var service = new TokenService(_mockDbConnectFactory.Object, _mockConfig.Object);
-
         // Act
-        var result = await service.GetTokenAsync();
+        var result = await _service.GetTokenAsync();
 
         // Assert
         Assert.Equal(expectedToken, result);
@@ -132,21 +119,10 @@ public class TokenServiceTests
                )
                .ReturnsAsync(response);
 
-        var httpClient = new HttpClient(_mockhttpMessage.Object)
-        {
-            BaseAddress = new Uri("https://test.com")
-        };
-        var httpClientFactory = new Mock<IHttpClientFactory>();
-        httpClientFactory
-            .Setup(x => x.CreateClient("TokenApi"))
-            .Returns(httpClient);
-
         _mockConfig.Setup(x => x["TokenApi:ClientId"]).Returns("client");
         _mockConfig.Setup(x => x["TokenApi:ClientSecret"]).Returns("secret");
-        // Act
-        var service = new TokenService(httpClientFactory.Object, _mockConfig.Object);
 
-        // Assert
-        await Assert.ThrowsAsync<Exception>(() => service.GetTokenAsync());
+        // Assert & Act
+        await Assert.ThrowsAsync<Exception>(() => _service.GetTokenAsync());
     }
 }
